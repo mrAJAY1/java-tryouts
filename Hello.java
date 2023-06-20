@@ -14,19 +14,37 @@ public class Hello {
         name = sc.nextLine();
         Display di = new Display();
         di.display(number, name);
-        System.out.println("Next, choose an option: 1 - sum, 2 - difference");
+        System.out.println("Next, choose an option: 1 - sum, 2 - difference, 3 - average");
         choice = sc.nextInt();
-        System.out.println("Enter the numbers");
-        num1 = sc.nextInt();
-        num2 = sc.nextInt();
+
         Calculation calc = new Calculation();
         switch (choice) {
             case 1: {
+                System.out.println("Enter the numbers");
+                num1 = sc.nextInt();
+                num2 = sc.nextInt();
                 calc.sum(num1, num2);
                 break;
             }
             case 2: {
+                System.out.println("Enter the numbers");
+                num1 = sc.nextInt();
+                num2 = sc.nextInt();
                 calc.difference(num1, num2);
+                break;
+            }
+            case 3: {
+
+                int[] newArr = new int[100];
+                System.out.println("Enter the total numbers");
+                int totalNumber = sc.nextInt();
+                newArr = new int[totalNumber];
+                System.out.println("Enter the numbers");
+                for (int i = 0; i < totalNumber; i++) {
+
+                    newArr[i] = sc.nextInt();
+                }
+                System.out.println("The Average is: " +  calc.average(newArr));
                 break;
             }
             default: {

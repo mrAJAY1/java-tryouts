@@ -9,4 +9,18 @@ public class Calculation {
         difference = a - b;
         System.out.println("The difference is: " + Math.abs(difference));
     }
+
+    public double average(int[] arr) {
+        int sum = 0;
+        double average;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        average = this.avgCalculator(sum, arr.length);
+        return average;
+    }
+
+    private double avgCalculator(int sum, int arrayLength) {
+        return sum / arrayLength;
+    }
 }
